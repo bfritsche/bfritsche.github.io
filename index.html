@@ -1,80 +1,282 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bennet Fritsche Promotion</title>
-  <meta name="description" content="Bennet Fritsche Promotion – professionelle Promotion- und Eventbegleitung.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bennet Fritsche Promotion – Event & Promotion in Magdeburg</title>
+  <meta name="description" content="Event- & Promotionsbetreuung, gastronomische Dienstleistungen und DJ in Magdeburg & Umgebung. Bennet Fritsche Promotion – zuverlässig, sympathisch, professionell." />
+  <meta property="og:title" content="Bennet Fritsche Promotion – Event & Promotion in Magdeburg" />
+  <meta property="og:description" content="Event- & Promotionsbetreuung, gastronomische Dienstleistungen und DJ in Magdeburg & Umgebung." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fritsche-promotion.com/" />
+  <meta name="theme-color" content="#0f172a" />
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #fafafa;
-      color: #333;
+    :root{
+      --bg:#0f172a;         /* slate-900 */
+      --bg-2:#111827;       /* gray-900 */
+      --fg:#0b1220;         /* deep text on light */
+      --muted:#6b7280;      /* gray-500 */
+      --card:#ffffff;
+      --accent:#f97316;     /* orange-500 */
+      --accent-2:#fb923c;   /* orange-400 */
+      --ring: rgba(249,115,22,.25);
+      --shadow: 0 10px 25px rgba(0,0,0,.12);
+      --radius: 14px;
+    }
+
+    /* Reset & base */
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: #111;
+      background: #fafafa;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* Header / Nav */
+    .nav{
+      position: sticky; top:0; z-index: 50;
+      backdrop-filter: saturate(160%) blur(8px);
+      background: rgba(255,255,255,.75);
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+    .nav-inner{
+      max-width: 1100px; margin: 0 auto;
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 12px 20px;
+    }
+    .brand{ font-weight:700; letter-spacing:.2px; }
+    .nav a{ padding:10px 12px; border-radius:10px; }
+    .nav a:hover{ background: rgba(0,0,0,.05); }
+
+    /* Hero */
+    .hero{
+      background:
+        radial-gradient(90% 60% at 80% 0%, rgba(251,146,60,.25), transparent 60%),
+        radial-gradient(90% 60% at 10% 10%, rgba(249,115,22,.25), transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      color:#fff;
+      padding: 88px 20px 72px;
       text-align: center;
     }
-    header {
-      background-color: #111;
-      color: white;
-      padding: 60px 20px;
+    .container{ max-width:1100px; margin:0 auto; }
+    .hero h1{
+      font-size: clamp(28px, 6vw, 44px);
+      line-height:1.15; margin: 0 0 10px;
+      letter-spacing:.2px;
     }
-    header h1 {
-      font-size: 2.2em;
-      margin: 0;
+    .hero p.lead{
+      margin: 0 auto 26px;
+      max-width: 760px;
+      color: rgba(255,255,255,.85);
+      font-size: clamp(16px, 2.4vw, 19px);
     }
-    header p {
-      margin-top: 10px;
-      font-size: 1.1em;
-      color: #ccc;
+    .badges{
+      display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:10px;
     }
-    section {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: 0 auto;
+    .badge{
+      background: rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.2);
+      padding:6px 10px; border-radius:999px; font-size:13px;
     }
-    a.button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 24px;
-      background-color: #111;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
+    .cta{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:12px 18px; border-radius:12px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color:#111; font-weight:700; box-shadow: var(--shadow);
+      margin-top: 22px;
     }
-    a.button:hover {
-      background-color: #333;
+    .cta:hover{ transform: translateY(-1px); }
+    .cta:focus{ outline: 3px solid var(--ring); outline-offset: 3px; }
+
+    /* Sections */
+    section{ padding:64px 20px; }
+    h2{ font-size: clamp(22px, 4.5vw, 28px); margin:0 0 10px; }
+    .muted{ color: var(--muted); margin:0 0 28px; }
+
+    /* Cards grid */
+    .grid{
+      display:grid; gap:18px;
+      grid-template-columns: repeat(12, 1fr);
     }
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #666;
-      background-color: #f1f1f1;
+    .card{
+      grid-column: span 12;
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.05);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      text-align: left;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover{ transform: translateY(-2px); box-shadow: 0 16px 32px rgba(0,0,0,.12); }
+    .card h3{ margin:0 0 6px; font-size: 18px; }
+    .card p{ margin:0; color:#444; }
+
+    @media (min-width: 720px){
+      .card.span-4{ grid-column: span 4; }
+      .card.span-6{ grid-column: span 6; }
+      .card.span-8{ grid-column: span 8; }
+    }
+
+    /* Footer & legal */
+    footer{
+      padding: 34px 20px;
+      background: #f1f5f9; color:#334155;
+      border-top:1px solid rgba(0,0,0,.06);
+      text-align:center;
+      font-size: 14px;
+    }
+    .links{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+    /* Motion respect */
+    @media (prefers-reduced-motion: reduce){
+      html { scroll-behavior: auto; }
+      .cta, .card:hover { transform:none; }
+    }
+
+    /* Dark mode (optional) */
+    @media (prefers-color-scheme: dark){
+      body{ background:#0b1020; color:#e5e7eb; }
+      .nav{ background: rgba(15,23,42,.6); border-bottom-color: rgba(255,255,255,.08); }
+      .nav a:hover{ background: rgba(255,255,255,.06); }
+      .card{ background:#0f172a; border-color: rgba(255,255,255,.06); }
+      .card p{ color:#cbd5e1; }
+      footer{ background:#0b1220; color:#94a3b8; border-top-color: rgba(255,255,255,.06); }
     }
   </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"Bennet Fritsche Promotion",
+    "areaServed":"Magdeburg und Umgebung",
+    "description":"Event- & Promotionsbetreuung, gastronomische Dienstleistungen und DJ.",
+    "url":"https://fritsche-promotion.com/",
+    "email":"info@fritsche-promotion.com",
+    "founder":"Bennet Fritsche"
+  }
+  </script>
 </head>
 <body>
 
-  <header>
-    <h1>Bennet Fritsche Promotion</h1>
-    <p>Professionelle Promotion- und Eventbegleitung </p>
+  <!-- Nav -->
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">Bennet Fritsche Promotion</div>
+      <nav>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#about">Über mich</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <h1>Event- & Promotionsbetreuung<br/>in Magdeburg & Umgebung</h1>
+      <p class="lead">Gastronomische Unterstützung, professionelle Promotion vor Ort und musikalische Unterhaltung als DJ – zuverlässig, sympathisch und hands-on.</p>
+      <div class="badges">
+        <span class="badge">📍 Magdeburg & Umgebung</span>
+        <span class="badge">🎤 DJ & Moderation</span>
+        <span class="badge">🤝 Markenauftritte & Sampling</span>
+        <span class="badge">🍽️ Gastro-Service</span>
+      </div>
+      <a class="cta" href="mailto:info@fritsche-promotion.com">Jetzt anfragen</a>
+    </div>
   </header>
 
-  <section>
-    <h2>Willkommen</h2>
-    <p>
-      Mein Name ist <strong>Bennet Fritsche</strong> und ich unterstütze Unternehmen bei der 
-      Umsetzung von Promotion-Aktionen und Events. 
-    </p>
-    <p>
-      Von Konzept bis Umsetzung – persönlich, zuverlässig und mit Leidenschaft für Details.
-    </p>
-    <a class="button" href="mailto:info@fritsche-promotion.com">Kontakt aufnehmen</a>
+  <!-- Leistungen -->
+  <section id="leistungen">
+    <div class="container">
+      <h2>Leistungen</h2>
+      <p class="muted">Klar strukturiert – flexibel kombinierbar. Für Agenturen, Sender, Veranstalter und Gastronomie.</p>
+
+      <div class="grid">
+        <div class="card span-4">
+          <h3>🎯 Promotionsbetreuung</h3>
+          <p>Zuverlässige Umsetzung Ihrer Programmaktion.</p>
+        </div>
+
+        <div class="card span-4">
+          <h3>🎤 Musikalische Unterhaltung (DJ)</h3>
+          <p>Stimmungsvolles Setup für Events, Firmenfeiern oder Promotions.</p>
+        </div>
+
+        <div class="card span-4">
+          <h3>🍽️ Gastronomische Dienstleistungen</h3>
+          <p>Unterstützung im Service, Back-of-House und bei Promo-Gastro-Aktionen. Sauber, schnell, freundlich.</p>
+        </div>
+
+        <div class="card span-6">
+          <h3>🤝 Markenbotschafter</h3>
+          <p>Sympathische Ansprache, Produkterklärungen und Lead-Gewinnung – immer freundlich und zielgruppenorientiert.</p>
+        </div>
+
+        <div class="card span-6">
+          <h3>🚀 Einsatzplanung & Vor-Ort-Koordination</h3>
+          <p>Briefing, Timing und zuverlässige Abwicklung am Event-Tag – damit alles reibungslos läuft.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- Über mich -->
+  <section id="about">
+    <div class="container">
+      <h2>Über mich</h2>
+      <p class="muted">Ich bin Bennet Fritsche – Ihr Ansprechpartner für starke Auftritte.</p>
+      <div class="grid">
+        <div class="card span-8">
+          <h3>Philosophie</h3>
+          <p>Ich kombiniere professionelle Kommunikation mit pragmatischer Umsetzung. Ziel: ein Markenauftritt, der im Gedächtnis bleibt – und ein Event, das rund läuft.</p>
+        </div>
+        <div class="card span-4">
+          <h3>Region</h3>
+          <p>Magdeburg & Umgebung.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="kontakt">
+    <div class="container" style="text-align:center;">
+      <h2>Kontakt</h2>
+      <p class="muted">Kurz anfragen und Termin sichern – ich melde mich zeitnah zurück.</p>
+      <p><a class="cta" href="mailto:info@fritsche-promotion.com">info@fritsche-promotion.com</a></p>
+      <p class="muted">Bitte teilen Sie Datum, Ort und Art des Einsatzes mit.</p>
+    </div>
+  </section>
+
+  <!-- Footer / Legal -->
   <footer>
-    <p>&copy; 2025 Bennet Fritsche Promotion &middot; <a href="mailto:info@fritsche-promotion.com">info@fritsche-promotion.com</a></p>
+    <div class="links">
+      <span>&copy; 2025 Bennet Fritsche Promotion</span>
+      <a href="#impressum">Impressum & Datenschutz</a>
+    </div>
   </footer>
+
+  <!-- Impressum & Datenschutz (einfach, statisch) -->
+  <section id="impressum" style="padding:40px 20px; background:#fff;">
+    <div class="container" style="max-width:900px;">
+      <h2>Impressum & Datenschutz</h2>
+      <p><strong>Verantwortlich:</strong><br>
+        Bennet Fritsche Promotion<br>
+        E-Mail: <a href="mailto:info@fritsche-promotion.com">info@fritsche-promotion.com</a><br>
+        Standort: Magdeburg & Umgebung
+      </p>
+      <p><strong>Datenschutz:</strong> Es werden keine Cookies gesetzt, keine externen Fonts geladen und keine Analyse-Tools genutzt. Serverlogs von GitHub Pages können technisch anfallen.</p>
+    </div>
+  </section>
 
 </body>
 </html>
